@@ -1,28 +1,32 @@
 //
 // Created by Braden Nicholson on 3/27/26.
 //
+
 #include "lvgl.h"
 
 #ifndef UMTI_UM_STYLE_H
 #define UMTI_UM_STYLE_H
 
-const lv_color_t bg0 = lv_color_hex(0x0f0f10);
-const lv_color_t bg1 = lv_color_hex(0x161618);
-const lv_color_t bg2 = lv_color_hex(0x1c1c1f);
-const lv_color_t bg3 = lv_color_hex(0x232326);
-const lv_color_t bg4 = lv_color_hex(0x2b2b2f);
-const lv_color_t bg5 = lv_color_hex(0x34343a);
-const lv_color_t bg6 = lv_color_hex(0x3f3f46);
-const lv_color_t bg7 = lv_color_hex(0x4a4a52);
-const lv_color_t bg8 = lv_color_hex(0x5a5a63);
 
-const lv_color_t fg0 = lv_color_hex(0xf2f2f3);
-const lv_color_t fg1 = lv_color_hex(0xd6d6d8);
-const lv_color_t fg2 = lv_color_hex(0xb8b8bc);
-const lv_color_t fg3 = lv_color_hex(0x9a9aa0);
-const lv_color_t fg4 = lv_color_hex(0x7e7e85);
-const lv_color_t fg5 = lv_color_hex(0x66666d);
-const lv_color_t fg6 = lv_color_hex(0x4f4f56);
+#define LV_COLOR_MAKE_HEX(c) {((c) >> 16) & 0xff, ((c) >> 8) & 0xff, ((c) >> 0) & 0xff}
+
+const lv_color_t bg0 = LV_COLOR_MAKE_HEX(0x0f0f10);
+const lv_color_t bg1 = LV_COLOR_MAKE_HEX(0x161618);
+const lv_color_t bg2 = LV_COLOR_MAKE_HEX(0x1c1c1f);
+const lv_color_t bg3 = LV_COLOR_MAKE_HEX(0x232326);
+const lv_color_t bg4 = LV_COLOR_MAKE_HEX(0x2b2b2f);
+const lv_color_t bg5 = LV_COLOR_MAKE_HEX(0x34343a);
+const lv_color_t bg6 = LV_COLOR_MAKE_HEX(0x3f3f46);
+const lv_color_t bg7 = LV_COLOR_MAKE_HEX(0x4a4a52);
+const lv_color_t bg8 = LV_COLOR_MAKE_HEX(0x5a5a63);
+
+const lv_color_t fg0 = LV_COLOR_MAKE_HEX(0xf2f2f3);
+const lv_color_t fg1 = LV_COLOR_MAKE_HEX(0xd6d6d8);
+const lv_color_t fg2 = LV_COLOR_MAKE_HEX(0xb8b8bc);
+const lv_color_t fg3 = LV_COLOR_MAKE_HEX(0x9a9aa0);
+const lv_color_t fg4 = LV_COLOR_MAKE_HEX(0x7e7e85);
+const lv_color_t fg5 = LV_COLOR_MAKE_HEX(0x66666d);
+const lv_color_t fg6 = LV_COLOR_MAKE_HEX(0x4f4f56);
 
 LV_IMAGE_DECLARE(home_icon);
 LV_IMAGE_DECLARE(apps_icon);
@@ -55,7 +59,7 @@ static void build_styles() {
 
     lv_style_init(&um_background_style);
     lv_style_set_bg_color(&um_background_style, bg0);
-    lv_style_set_text_font(&um_background_style, &lv_font_montserrat_18);
+    lv_style_set_text_font(&um_background_style, &roboto_mono_18);
     lv_style_set_text_color(&um_background_style, fg0);
     lv_style_set_pad_all(&um_background_style, 16);
     lv_style_set_radius(&um_background_style, 0);
@@ -65,7 +69,7 @@ static void build_styles() {
 
     lv_style_init(&um_container_style);
     lv_style_set_bg_opa(&um_container_style, LV_OPA_0);
-    lv_style_set_text_font(&um_container_style, &lv_font_montserrat_18);
+    lv_style_set_text_font(&um_container_style, &roboto_mono_18);
     lv_style_set_text_color(&um_container_style, fg0);
     lv_style_set_pad_all(&um_container_style, 0);
     lv_style_set_radius(&um_container_style, 0);
@@ -76,7 +80,7 @@ static void build_styles() {
 
     lv_style_init(&um_body_style);
     lv_style_set_bg_color(&um_body_style, bg2);
-    lv_style_set_text_font(&um_body_style, &lv_font_montserrat_18);
+    lv_style_set_text_font(&um_body_style, &roboto_mono_18);
     lv_style_set_text_color(&um_body_style, fg0);
     lv_style_set_outline_pad(&um_body_style, 8);
     lv_style_set_pad_all(&um_body_style, 8);
@@ -88,7 +92,7 @@ static void build_styles() {
 
     lv_style_init(&um_dock_style);
     lv_style_set_bg_color(&um_dock_style, bg2);
-    lv_style_set_text_font(&um_dock_style, &lv_font_montserrat_18);
+    lv_style_set_text_font(&um_dock_style, &roboto_mono_18);
     lv_style_set_text_color(&um_dock_style, fg0);
     lv_style_set_outline_pad(&um_dock_style, 8);
     lv_style_set_pad_all(&um_dock_style, 8);
@@ -107,7 +111,7 @@ static void build_styles() {
 
     lv_style_init(&um_button_style);
     lv_style_set_bg_color(&um_button_style, bg3);
-    lv_style_set_text_font(&um_button_style, &lv_font_montserrat_18);
+    lv_style_set_text_font(&um_button_style, &roboto_mono_18);
     lv_style_set_text_color(&um_button_style, fg0);
     lv_style_set_radius(&um_button_style, 8);
     lv_style_set_outline_pad(&um_button_style, 8);
@@ -142,7 +146,7 @@ static void build_styles() {
     lv_grad_linear_init(&grad, lv_pct(0), lv_pct(85), lv_pct(100), lv_pct(15), LV_GRAD_EXTEND_PAD);
 
     lv_style_set_bg_grad(&um_button_active_style, &grad);
-    lv_style_set_text_font(&um_button_active_style, &lv_font_montserrat_18);
+    lv_style_set_text_font(&um_button_active_style, &roboto_mono_18);
     lv_style_set_text_color(&um_button_active_style, fg0);
     lv_style_set_radius(&um_button_active_style, 8);
     lv_style_set_outline_pad(&um_button_active_style, 8);
